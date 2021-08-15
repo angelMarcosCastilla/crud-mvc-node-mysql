@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    title Angel marcos
+    body 
+      h1.text-center.mb-4.text-danger CRUD NODEJS-MVC-MYSQL
+      .container
+        .row
+          .col-12.col-lg-5.pb-4
+            form(action="/addUser", method="POST").form
+              input(type="text", name="nombre" placeholder="Ingrese nombre").form-control.mb-2
+              input(type="text", name="apellido"  placeholder="Ingrese apellido").form-control.mb-2
+              input(type="number", name="edad"  placeholder="Ingrese edad").form-control.mb-2
+              button.btn.btn-primary.w-50 agregar
+          .col-12.col-lg-7
+            table.table.table-striped
+              thead.thead.bg-dark.text-white
+                tr 
+                  th id
+                  th Nombre 
+                  th Apellido 
+                  th edad
+                  th opciones
+              tbody.tbody
+                each data in rows
+                  tr
+                    td= data.id
+                    td= data.nombre
+                    td= data.apellido 
+                    td= data.edad
+                    td
+                      button.btn.btn-success.me-2 editar
+                      button.btn.btn-outline-danger eliminar
