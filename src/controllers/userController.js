@@ -8,10 +8,10 @@ userController.index = (req , res) => {
 }
 
 userController.addUser = (req, res) => {
-    userModel.addUser(req.body, (err,res) => {
-      if(!err) console.log(res)
+    userModel.addUser(req.body, (err,result) => {
+   
+      if(!err) res.redirect("/")
     })
-    res.send("add")
 }
 
 module.exports = userController
