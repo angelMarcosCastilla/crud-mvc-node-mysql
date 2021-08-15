@@ -33,5 +33,5 @@ html(lang="en")
                     td= data.apellido 
                     td= data.edad
                     td
-                      button.btn.btn-success.me-2 editar
-                      button.btn.btn-outline-danger eliminar
+                      a(href=`/editUser/${data.id}`).btn.btn-success.me-2 editar
+                       a(href=`/deleteUser/${data.id}`).btn.btn-outline-danger eliminar

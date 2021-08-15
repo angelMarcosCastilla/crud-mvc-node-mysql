@@ -13,5 +13,17 @@ userController.addUser = (req, res) => {
       if(!err) res.redirect("/")
     })
 }
+userController.editUser = (req, res) => {
+    userModel.editUser(req.params, (err,result) => {
+   
+      if(!err) res.redirect("/")
+    })
+}
+userController.deleteUser = (req, res) => {
+    userModel.deleteUser(req.params.id, (err,result) => {
+   
+      if(!err) res.redirect("/")
+    })
+}
 
 module.exports = userController
